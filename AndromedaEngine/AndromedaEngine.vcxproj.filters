@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{05a5b142-b769-450b-8114-d769c0416a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{993417a7-5306-45ee-a5b0-7a84537d9027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{d8f6d73b-1381-4012-80ae-1248814d09e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{496936cd-c476-49b6-a80b-a3d16bfff145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EntitySystem">
+      <UniqueIdentifier>{18b093a3-3ec8-496a-9951-ee0d24382f45}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\AndromedaEngine\AndromedaEngine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Camera.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\CircleCollider2D.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Collider.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Color.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Component.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\ComponentManager.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\MathA.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Errors.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Find_All.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\GameEngine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\GameObject.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\GLSL_ShaderProgram.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\ImageLoader.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Input.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\IOManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Manager.h" />
+    <ClInclude Include="include\AndromedaEngine\Matrix2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Picopng.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Renderer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\ResourceManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Scene.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Sprite.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\SpriteBatch.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\SpriteRenderer.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Texture.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\TextureCache.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Time.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Transform.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Vector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Vertex.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Window.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AndromedaEngine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CircleCollider2D.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collider.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentManager.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Errors.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEngine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL_ShaderProgram.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImageLoader.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IOManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Manager.cpp" />
+    <ClCompile Include="src\MathA.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Picopng.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprite.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpriteBatch.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpriteRenderer.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureCache.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Transform.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

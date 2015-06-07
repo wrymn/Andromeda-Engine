@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\AndromedaEngine\Camera.h" />
+    <ClInclude Include="include\AndromedaEngine\CircleCollider2D.h" />
+    <ClInclude Include="include\AndromedaEngine\Collider.h" />
+    <ClInclude Include="include\AndromedaEngine\Color.h" />
+    <ClInclude Include="include\AndromedaEngine\Component.h" />
+    <ClInclude Include="include\AndromedaEngine\ComponentManager.h" />
+    <ClInclude Include="include\AndromedaEngine\Errors.h" />
+    <ClInclude Include="include\AndromedaEngine\Find_All.h" />
+    <ClInclude Include="include\AndromedaEngine\GameEngine.h" />
+    <ClInclude Include="include\AndromedaEngine\GameObject.h" />
+    <ClInclude Include="include\AndromedaEngine\GLSL_ShaderProgram.h" />
+    <ClInclude Include="include\AndromedaEngine\ImageLoader.h" />
+    <ClInclude Include="include\AndromedaEngine\Input.h" />
+    <ClInclude Include="include\AndromedaEngine\IOManager.h" />
+    <ClInclude Include="include\AndromedaEngine\AndromedaEngine.h" />
+    <ClInclude Include="include\AndromedaEngine\Manager.h" />
+    <ClInclude Include="include\AndromedaEngine\MathA.h" />
+    <ClInclude Include="include\AndromedaEngine\Matrix2.h" />
+    <ClInclude Include="include\AndromedaEngine\Picopng.h" />
+    <ClInclude Include="include\AndromedaEngine\Renderer.h" />
+    <ClInclude Include="include\AndromedaEngine\ResourceManager.h" />
+    <ClInclude Include="include\AndromedaEngine\Scene.h" />
+    <ClInclude Include="include\AndromedaEngine\Sprite.h" />
+    <ClInclude Include="include\AndromedaEngine\SpriteBatch.h" />
+    <ClInclude Include="include\AndromedaEngine\SpriteRenderer.h" />
+    <ClInclude Include="include\AndromedaEngine\Texture.h" />
+    <ClInclude Include="include\AndromedaEngine\TextureCache.h" />
+    <ClInclude Include="include\AndromedaEngine\Time.h" />
+    <ClInclude Include="include\AndromedaEngine\Transform.h" />
+    <ClInclude Include="include\AndromedaEngine\Vector.h" />
+    <ClInclude Include="include\AndromedaEngine\Vertex.h" />
+    <ClInclude Include="include\AndromedaEngine\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AndromedaEngine.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\CircleCollider2D.cpp" />
+    <ClCompile Include="src\Collider.cpp" />
+    <ClCompile Include="src\Component.cpp" />
+    <ClCompile Include="src\ComponentManager.cpp" />
+    <ClCompile Include="src\Errors.cpp" />
+    <ClCompile Include="src\GameEngine.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
+    <ClCompile Include="src\GLSL_ShaderProgram.cpp" />
+    <ClCompile Include="src\ImageLoader.cpp" />
+    <ClCompile Include="src\Input.cpp" />
+    <ClCompile Include="src\IOManager.cpp" />
+    <ClCompile Include="src\Manager.cpp" />
+    <ClCompile Include="src\MathA.cpp" />
+    <ClCompile Include="src\Picopng.cpp" />
+    <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\ResourceManager.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\Sprite.cpp" />
+    <ClCompile Include="src\SpriteBatch.cpp" />
+    <ClCompile Include="src\SpriteRenderer.cpp" />
+    <ClCompile Include="src\TextureCache.cpp" />
+    <ClCompile Include="src\Time.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\Window.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2DA6E640-E5E1-48BD-A74A-772FF04D1830}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AndromedaEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(ProjectDir)libraries\Glew\lib\Release\Win32\;$(ProjectDir)libraries\SDL2\lib\x86\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(SolutionDir)Dependencies\SDL2\lib\x86;$(SolutionDir)Dependencies\Glew\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\AndromedaEngine;$(ProjectDir)include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;SDL2.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\;$(SolutionDir)Dependencies\SDL2\include\;$(SolutionDir)Dependencies\Glew\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;SDL2.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
