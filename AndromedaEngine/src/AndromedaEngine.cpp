@@ -1,15 +1,16 @@
 #include <SDL2\SDL.h>
 #include <GL\glew.h>
 #include "GameEngine.h"
- 
+#include "System.h"
+
 namespace AndromedaEngine
 {
 	GameEngine gameEngine;
 
 	//Initializes Andromeda Engine, this has to be the first which is done
-	void InitializeEngine()
+	void InitializeEngine(int argc, char* argv[])
 	{
-		gameEngine.EngineInit();
+		System::Initialize(argc, argv);
 	}
 
 	//Start Andromeda Engine, step after calling internal game classes

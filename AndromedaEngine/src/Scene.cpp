@@ -9,7 +9,6 @@ namespace AndromedaEngine
 
 	Scene::Scene()
 	{
-		std::cout << "Scene created" << std::endl;
 		//If this is the first scene created, make it the current scene
 		if(Scene::currentScene == NULL)
 			Scene::currentScene = this;
@@ -21,17 +20,18 @@ namespace AndromedaEngine
 		scenes.push_back(this);
 		SetInitialName();
 
+		std::cout << "New scene \"" << this->name << "\" was created" << std::endl;
 	}
 
 	void Scene::SetInitialName()
 	{
 		//If there are more scenes, set incremental name
-		if (Scene::scenes.size() > 0)
+		if (Scene::scenes.size() > 1)
 		{
+			
 			name = "Scene " + Scene::scenes.size();
 			return;
 		}
-
 		//If this is the first scene, set it`s name
 		name = "Scene";
 	}

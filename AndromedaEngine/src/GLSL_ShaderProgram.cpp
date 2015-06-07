@@ -1,6 +1,9 @@
+#include <fstream>
+#include <windows.h>
+#include <string>
+#include <iostream>
 #include "GLSL_ShaderProgram.h"
 #include "Errors.h"
-#include <fstream>
 
 namespace AndromedaEngine
 {

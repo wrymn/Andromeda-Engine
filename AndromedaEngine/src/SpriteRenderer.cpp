@@ -1,3 +1,4 @@
+#include <iostream>
 #include "SpriteRenderer.h"
 #include "GameObject.h"
 #include "Renderer.h"

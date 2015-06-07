@@ -2,48 +2,23 @@
 #include "Scene.h"
 #include "Input.h"
 #include "Time.h"
-
-#include "Window.h"
 #include "Manager.h"
+#include "Common.h"
+#include "Video.h"
+#include "System.h"
 
 namespace AndromedaEngine
 {
-
-	//Runs the Engine from the program start
-	void GameEngine::Run()
-	{
-		EngineInit();
-		GameLoop();
-	}
-
 	//Starts the Game Engine and main loop
 	void GameEngine::EngineStart()
 	{
 		GameLoop();
 	}
 
-	//Initializes Engine with all it`s components
-	void GameEngine::EngineInit()
+	bool GameEngine::isExiting()
 	{
-		engineState = EngineState::RUNNING;
-		//Initialize SDL
-		SDL_Init(SDL_INIT_EVERYTHING);
-		//Use double buffering for engine
-		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-		//Initialize game screen
-		Window::MainWindow("Andromeda Engine", 1024, 768, NULL);
-		//Initialize main camera
-		mainCamera.Init(Window::width, Window::height);
-		Camera::mainCamera = &mainCamera;
-		
-		//Lock the game FPS
-		//Time::LockFPS(30);
-
-		//Enable WireFrame mode
-		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		return exiting;
 	}
-
-	
 
 	//Processes Input
 	void GameEngine::ProcessInput()
@@ -54,7 +29,7 @@ namespace AndromedaEngine
 			switch (event.type)
 			{
 			case SDL_QUIT:
-				engineState = EngineState::EXIT;
+				exiting = true;
 				break;
 			case SDL_KEYDOWN:
 				Input::KeyPressed(event.key.keysym.sym);
@@ -78,13 +53,13 @@ namespace AndromedaEngine
 	//Main game loop
 	void GameEngine::GameLoop()
 	{
-		while (engineState != EngineState::EXIT)
+		while (!isExiting())
 		{
 			Time::Begin();
 
 			calculateFPS();
 			ProcessInput();
-			mainCamera.Update();
+			Camera::mainCamera->Update();
 
 			UpdateManagers();
 			UpdateScene();
@@ -94,6 +69,9 @@ namespace AndromedaEngine
 			limitFPS();
 			Time::End();
 		}
+
+		if (isExiting())
+			System::Quit();
 	}
 
 	//Updates all manager base classes

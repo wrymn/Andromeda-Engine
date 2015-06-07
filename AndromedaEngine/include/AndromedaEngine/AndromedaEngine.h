@@ -1,6 +1,4 @@
 #pragma once
-#include <SDL2\SDL.h>
-#include <GL\glew.h>
 #include <glm\glm.hpp>
 
 #include "Vector.h"
@@ -9,11 +7,8 @@
 #include "Texture.h"
 #include "Sprite.h"
 #include "Errors.h"
-#include "GLSL_ShaderProgram.h"
-#include "Window.h"
 #include "Camera.h"
 #include "ResourceManager.h"
-#include "SpriteBatch.h"
 #include "Time.h"
 #include "GameObject.h"
 #include "SpriteRenderer.h"
@@ -21,12 +16,14 @@
 #include "Collider.h"
 #include "CircleCollider2D.h"
 #include "Manager.h"
+#include "System.h"
+#include "Video.h"
 
 namespace AndromedaEngine
 {
 	//Initializes Andromeda Engine
 	// - this has to be called first to initialize Engine
-	extern void InitializeEngine();
+	extern void InitializeEngine(int argc, char* argv[]);
 	// - this is called after calling external game classes
 	extern void StartEngine();
 }

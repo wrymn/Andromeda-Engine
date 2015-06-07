@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AndromedaEngine\Common.h" />
     <ClInclude Include="include\AndromedaEngine\Camera.h" />
     <ClInclude Include="include\AndromedaEngine\CircleCollider2D.h" />
     <ClInclude Include="include\AndromedaEngine\Collider.h" />
@@ -42,7 +43,8 @@
     <ClInclude Include="include\AndromedaEngine\Transform.h" />
     <ClInclude Include="include\AndromedaEngine\Vector.h" />
     <ClInclude Include="include\AndromedaEngine\Vertex.h" />
-    <ClInclude Include="include\AndromedaEngine\Window.h" />
+    <ClInclude Include="include\AndromedaEngine\System.h" />
+    <ClInclude Include="include\AndromedaEngine\Video.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AndromedaEngine.cpp" />
@@ -70,7 +72,12 @@
     <ClCompile Include="src\TextureCache.cpp" />
     <ClCompile Include="src\Time.cpp" />
     <ClCompile Include="src\Transform.cpp" />
-    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="src\System.cpp" />
+    <ClCompile Include="src\Video.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\FragmentShader.frag" />
+    <None Include="Shaders\VertexShader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2DA6E640-E5E1-48BD-A74A-772FF04D1830}</ProjectGuid>
@@ -103,6 +110,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>$(ProjectDir)libraries\Glew\lib\Release\Win32\;$(ProjectDir)libraries\SDL2\lib\x86\;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)Dependencies\libraries\AndromedaEngine\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>$(SolutionDir)Dependencies\SDL2\lib\x86;$(SolutionDir)Dependencies\Glew\lib\Release\Win32;$(LibraryPath)</LibraryPath>

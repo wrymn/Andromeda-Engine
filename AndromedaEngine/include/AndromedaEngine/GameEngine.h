@@ -2,25 +2,19 @@
 #include <Windows.h>
 #include <vector>
 #include <iostream>
-
+#include <SDL2\SDL.h>
 #include "Camera.h"
-
-
-
 
 namespace AndromedaEngine
 {
-	enum class EngineState { RUNNING, EXIT };
-
 	class GameEngine sealed
 	{
 	public:
-		//Main Run function which has to be called to start the Andromeda Engine
-		void Run();
 		//Initializes Engine with all its parts
 		void EngineInit();
 		//Starts the engine and game loop
 		void EngineStart();
+		
 
 	private:
 		//Main
@@ -36,14 +30,14 @@ namespace AndromedaEngine
 		void calculateFPS();
 		void limitFPS();
 
-	private:
-		Camera mainCamera;
-		EngineState engineState;
+		bool isExiting();
 
 	private:
 		//FPS management
 		float fps;
 		float frameTime;
 		float time;
+
+		bool exiting;
 	};
 }

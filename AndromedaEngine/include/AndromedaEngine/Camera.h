@@ -8,9 +8,12 @@ namespace AndromedaEngine
 	class Camera
 	{
 	public:
+		//Main game camera 
 		static Camera* mainCamera;
+
 	public:
-		void Init(float screenWidth, float screenHeight);
+		//Creates and returns new camera
+		static Camera* CreateCamera();
 		void Update();
 
 		//Set the camera position
@@ -36,6 +39,7 @@ namespace AndromedaEngine
 		glm::mat4 orthoMatrix;
 	public:
 		Camera();
+		Camera(float screenWidth, float screenHeight);
 		~Camera();
 	};
 }

@@ -1,11 +1,13 @@
-#include "Camera.h"
 #include <iostream>
+#include "Camera.h"
+#include "Video.h"
 
 namespace AndromedaEngine
 {
-	Camera* Camera::mainCamera;
+	Camera* Camera::mainCamera = NULL;
 
-	Camera::Camera() : position(0, 0), cameraMatrix(1), scale(1), needsMatrixUpdate(true), screenWidth(500), screenHeight(500), orthoMatrix(1.0f){}
+	Camera::Camera() : position(0, 0), cameraMatrix(1), scale(1), needsMatrixUpdate(true), screenWidth(Video::GetScreenWidth()), screenHeight(Video::GetScreenHeight()), orthoMatrix(1.0f){}
+	Camera::Camera(float screenWidth, float screenHeight) : position(0, 0), cameraMatrix(1), scale(1), needsMatrixUpdate(true), screenWidth(screenWidth), screenHeight(screenHeight), orthoMatrix(1.0f){}
 	Camera::~Camera(){}
 
 	//Updates the Camera
@@ -25,16 +27,13 @@ namespace AndromedaEngine
 		}
 	}
 
-	//Initializes the Camera
-	void Camera::Init(float screenWidth, float screenHeight)
+	//Creates and returns new camera
+	Camera* Camera::CreateCamera()
 	{
-		this->screenWidth = screenWidth;
-		this->screenHeight = screenHeight;
-
-		//Set the camera size
-		orthoMatrix = glm::ortho(0.0f, screenWidth, 0.0f, screenHeight);
+		return new Camera();
 	}
 
+	//Converts screen position to world position
 	Vector2 Camera::ScreenToWorldCoords(Vector2 screenPosition)
 	{
 		//Invert Y coordinates

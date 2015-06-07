@@ -16,6 +16,12 @@
     <Filter Include="EntitySystem">
       <UniqueIdentifier>{18b093a3-3ec8-496a-9951-ee0d24382f45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="General">
+      <UniqueIdentifier>{7b225829-f082-429e-a8e4-4b872478cfed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{2fe8699a-414c-4f17-8e4e-75fefef5275e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AndromedaEngine\AndromedaEngine.h">
@@ -54,9 +60,6 @@
     <ClInclude Include="include\AndromedaEngine\GameObject.h">
       <Filter>EntitySystem</Filter>
     </ClInclude>
-    <ClInclude Include="include\AndromedaEngine\GLSL_ShaderProgram.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="include\AndromedaEngine\ImageLoader.h">
       <Filter>Utility</Filter>
     </ClInclude>
@@ -66,15 +69,11 @@
     <ClInclude Include="include\AndromedaEngine\IOManager.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="include\AndromedaEngine\Manager.h" />
     <ClInclude Include="include\AndromedaEngine\Matrix2.h">
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="include\AndromedaEngine\Picopng.h">
       <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="include\AndromedaEngine\Renderer.h">
-      <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="include\AndromedaEngine\ResourceManager.h">
       <Filter>Utility</Filter>
@@ -109,7 +108,22 @@
     <ClInclude Include="include\AndromedaEngine\Vertex.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="include\AndromedaEngine\Window.h">
+    <ClInclude Include="include\AndromedaEngine\Manager.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Renderer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\GLSL_ShaderProgram.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Common.h">
+      <Filter>General</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\System.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\Video.h">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -141,9 +155,6 @@
     <ClCompile Include="src\GameObject.cpp">
       <Filter>EntitySystem</Filter>
     </ClCompile>
-    <ClCompile Include="src\GLSL_ShaderProgram.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="src\ImageLoader.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
@@ -153,15 +164,11 @@
     <ClCompile Include="src\IOManager.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\Manager.cpp" />
     <ClCompile Include="src\MathA.cpp">
       <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="src\Picopng.cpp">
       <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Renderer.cpp">
-      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="src\ResourceManager.cpp">
       <Filter>Utility</Filter>
@@ -187,8 +194,28 @@
     <ClCompile Include="src\Transform.cpp">
       <Filter>EntitySystem</Filter>
     </ClCompile>
-    <ClCompile Include="src\Window.cpp">
+    <ClCompile Include="src\Manager.cpp">
+      <Filter>EntitySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL_ShaderProgram.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\System.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Video.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\FragmentShader.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\VertexShader.vert">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

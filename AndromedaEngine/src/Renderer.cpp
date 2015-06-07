@@ -1,8 +1,8 @@
 #include "Renderer.h"
 #include "SpriteBatch.h"
 #include "Camera.h"
-#include "Window.h"
 #include "GLSL_ShaderProgram.h"
+#include "Video.h"
 
 namespace AndromedaEngine
 {
@@ -61,7 +61,7 @@ namespace AndromedaEngine
 		//Unuse shader program
 		shaderProgram->Unuse();
 		//Swap back to front buffer
-		Window::MainWindow()->swapBuffer();
+		Video::SwapBuffer();
 	}
 
 	void Renderer::SpriteBatching()
