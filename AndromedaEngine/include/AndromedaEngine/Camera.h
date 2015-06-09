@@ -1,6 +1,8 @@
 #pragma once
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
+#include "glm\gtx\string_cast.hpp"
+#include <iostream>
 #include "Vector.h"
 
 namespace AndromedaEngine
@@ -28,6 +30,11 @@ namespace AndromedaEngine
 		glm::mat4 GetCameraMatrix() { return cameraMatrix; };
 		//Converts screen position to world position
 		Vector2 ScreenToWorldCoords(Vector2 screenPosition);
+
+	private:
+		//Prints camera info and member values to console
+		void DebugToConsole();
+
 	private:
 		int screenWidth, screenHeight;
 		//Whether the camera needs matrix update
@@ -35,8 +42,9 @@ namespace AndromedaEngine
 		float scale;
 		Vector2 position;
 		glm::mat4 cameraMatrix;
-
 		glm::mat4 orthoMatrix;
+
+		float cameraDebugCounter;
 	public:
 		Camera();
 		Camera(float screenWidth, float screenHeight);

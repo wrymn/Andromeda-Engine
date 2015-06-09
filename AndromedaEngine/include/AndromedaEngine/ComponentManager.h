@@ -3,6 +3,7 @@
 #include "Collider.h"
 #include "GameObject.h"
 #include "Renderer.h"
+#include "SpriteRenderer.h"
 
 namespace AndromedaEngine
 {
@@ -16,8 +17,20 @@ namespace AndromedaEngine
 
 		//List of all components available in scene
 		component_vector components;
+		
+		//Adds components to the slist
+		Component* AddComponent(Component* component);
+		//Removes an component from the list
+		bool RemoveComponent(component_vector_const_itr component_itr);
+
+		ComponentManager();
+		~ComponentManager();
+
+	private:
 		//List of all colliders in component manager
 		std::vector<Collider*> colliders;
+		//List of all colliders in component manager
+		std::vector<SpriteRenderer*> spriteRenderers;
 
 		//Size we increment component Vector when it reaches the limit
 		int componentIncrement;
@@ -26,23 +39,19 @@ namespace AndromedaEngine
 		//Current number of components in the Vector
 		int currentComponentCount;
 
-		//Adds components to the slist
-		Component* AddComponent(Component* component);
-		//Removes an component from the list
-		bool RemoveComponent(component_vector_const_itr component_itr);
-
-		//Resizes the component vector when it reaches its limit
-		void ResizeComponents();
-
-		ComponentManager();
-		~ComponentManager();
 	private:
 		//Clears all components from ComponentManager
 		void Clear();
 		//Updates all components on scene, called from the scene ComponentManager is created from
-		void Update();
+		void UpdateComponents();
+		//Updates all Collider components
+		void UpdateColliders();
+		//Updates all SpriteRenderer components
+		void UpdateSpriteRenderers();
+
+		//Resizes the component vector when it reaches its limit
+		void ResizeComponents();
 
 		friend class Scene;
-
 	};
 }

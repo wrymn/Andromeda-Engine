@@ -10,7 +10,7 @@ namespace AndromedaEngine
 		ColliderType colliderType;
 
 	public:
-		virtual void Collision(Collider* collider) = 0;
+		virtual void Collision(Collider* collider);
 
 	public:
 		Collider();

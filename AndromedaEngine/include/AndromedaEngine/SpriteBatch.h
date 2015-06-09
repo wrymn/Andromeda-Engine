@@ -47,17 +47,16 @@ namespace AndromedaEngine
 
 		void Init();
 
-		//Sets up the batching
+		//Sets up the batch
 		void Begin(SpriteSortType sortType = SpriteSortType::TEXTURE);
-		//Call after Begin
+		//Called after all textures are added into current batch
 		void End();
+		//Renders the batch on screen 
+		void RenderCurrentBatch();
 
 		//Adds sprite to the batch
 		void AddSprite(const glm::vec4& destRect, const glm::vec4& uvRect, const GLuint& texture, float depth, const Color& color);
 
-
-		//Renders the batches on screen
-		void RenderBatchF();
 	private:
 		void CreateRenderBatches();
 		void CreateVertexArray();

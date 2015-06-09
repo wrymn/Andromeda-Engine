@@ -1,22 +1,17 @@
-#include "SpriteBatch.h"
 #include <algorithm>
+#include <iostream>
+#include "SpriteBatch.h"
 #include "Vector.h"
 
 namespace AndromedaEngine
 {
-	SpriteBatch::SpriteBatch() : vbo(0), vao(0)
-	{
-		//CreateVertexArray();
-	}
-
-
+	SpriteBatch::SpriteBatch() : vbo(0), vao(0) {}
 	SpriteBatch::~SpriteBatch(){}
 
 	void SpriteBatch::Init()
 	{
 		CreateVertexArray();
 	}
-
 
 	void SpriteBatch::Begin(SpriteSortType sortType)
 	{
@@ -28,6 +23,7 @@ namespace AndromedaEngine
 		
 		spriteTextures.clear();
 	}
+
 	void SpriteBatch::End()
 	{
 		SortSpriteTextures();
@@ -56,10 +52,11 @@ namespace AndromedaEngine
 		newSprite->buttomRight.color = color;
 		newSprite->buttomRight.uv = { uvRect.x + uvRect.z, uvRect.y };
 
+
 		spriteTextures.push_back(newSprite);
 	}
 
-	void SpriteBatch::RenderBatchF()
+	void SpriteBatch::RenderCurrentBatch()
 	{
 		glBindVertexArray(vao);
 		for (int i = 0; i < renderBatches.size(); i++)

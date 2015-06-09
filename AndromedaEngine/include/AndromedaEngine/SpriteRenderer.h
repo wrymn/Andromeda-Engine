@@ -18,11 +18,11 @@ namespace AndromedaEngine{
 
 	private:
 		//Called to update sprite
-		void Update();
+		void UpdateSprite();
 		//Initializes the component
 		void Initialize();
 
-		friend class GameEngine;
+		friend class ComponentManager;
 
 	public:
 		SpriteRenderer();

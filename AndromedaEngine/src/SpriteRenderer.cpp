@@ -10,12 +10,13 @@ namespace AndromedaEngine{
 
 	void SpriteRenderer::Initialize()
 	{
+		color = { 255, 255, 255, 255 };
 		isActive = true;
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////
 
-	void SpriteRenderer::Update()
+	void SpriteRenderer::UpdateSprite()
 	{
 		//If the texture is assigned, draw it
 		if (texture.id != 0 && isActive)
@@ -26,7 +27,10 @@ namespace AndromedaEngine{
 			glm::vec4 uvRect;
 			uvRect = { 0, 0, 1, 1 };
 
-			//Add and Draw
+			if (gameObject->name == "0Player")
+				std::cout << "Player size: " << gameObject->transform->scale.x << std::endl;
+
+			//Add texture to sprite batch
 			gameObject->scene->GetSceneRenderer()->GetSpriteBatch()->AddSprite(destRect, uvRect, texture.id, 0, color);
 		}
 	}

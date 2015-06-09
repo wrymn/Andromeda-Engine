@@ -15,7 +15,7 @@ namespace AndromedaEngine
 
 		//Initialize
 		componentManager = new ComponentManager();
-		renderer = new Renderer();
+		renderer = new Renderer(*this);
 		isActive = false;
 		scenes.push_back(this);
 		SetInitialName();
@@ -28,7 +28,6 @@ namespace AndromedaEngine
 		//If there are more scenes, set incremental name
 		if (Scene::scenes.size() > 1)
 		{
-			
 			name = "Scene " + Scene::scenes.size();
 			return;
 		}
@@ -38,30 +37,23 @@ namespace AndromedaEngine
 
 	void Scene::Update()
 	{
-		//Update all objects on scene
-		for (gameObject_vector_itr itr = gameObjects.begin(); itr < gameObjects.end(); itr++)
+		//Call Update() method for all GameObjects
+		for (int i = 0; i < gameObjects.size(); i++)
 		{
-			(*itr)->gameObject->Update();
+			gameObjects[i]->Update();
 		}
-
 		//Update componentManager and all components on scene
-		componentManager->Update();
+		componentManager->UpdateComponents();
 	}
 
 	void Scene::UpdateScenePhysics()
 	{
-		//Update collision of Objects which have collider attached
-		for (int i = 0; i < componentManager->colliders.size(); i++)
-		{
-			for (int j = i + 1; j < componentManager->colliders.size(); j++)
-				componentManager->colliders[i]->Collision(componentManager->colliders[j]);
-		}
+		componentManager->UpdateColliders();
 	}
 
-	void Scene::AddGameObject(GameObject* object)
+	void Scene::UpdateSpriteRenderers()
 	{
-		gameObjects.push_back(object);
-		object->scene = this;
+		componentManager->UpdateSpriteRenderers();
 	}
 
 	void Scene::Render()
@@ -69,14 +61,24 @@ namespace AndromedaEngine
 		renderer->Render();
 	}
 
+	void Scene::AddGameObject(GameObject* object)
+	{
+		Scene::currentScene->gameObjects.push_back(object);
+	}
+
+	Scene* Scene::GetCurrentScene()
+	{
+		return Scene::currentScene;
+	}
+
 	void Scene::RemoveGameObject(GameObject* object)
 	{
-		for (gameObject_vector_itr itr = gameObjects.begin(); itr < gameObjects.end(); itr++)
+		for (gameObject_vector_itr itr = Scene::currentScene->gameObjects.begin(); itr < Scene::currentScene->gameObjects.end(); itr++)
 		{
 			if ((*itr) == object)
 			{
-				(*itr)->Destroy();
-				gameObjects.erase(itr);
+				(*itr)->DestroyThisObject();
+				Scene::currentScene->gameObjects.erase(itr);
 				delete *itr;
 				break;
 			}

@@ -24,23 +24,8 @@ namespace AndromedaEngine
 	//Initializes game engine video
 	void Video::Initialize()
 	{
-		//Use double buffering for engine
-		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, DOUBLE_BUFFERING);
-
-		//Initialize game screen
+		//Creates an window we render to
 		Create_Window();
-
-		//Enable WireFrame mode
-		if (POLYGON_MODE)
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	}
-	
-	//Creates an window
-	void Video::Create_Window()
-	{
-		//Create SDL Window
-		SDL_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_OPENGL);
-		Error(SDL_window == nullptr, "SDL Window could not be created!", true);
 
 		//Initialize OpenGL
 		SDL_GLContext gl_context = SDL_GL_CreateContext(SDL_window);
@@ -50,20 +35,36 @@ namespace AndromedaEngine
 		GLenum glInitReturn = glewInit();
 		Error(glInitReturn != GLEW_OK, "Glew could not be initialized!", true);
 
+		//---------------------------------------------------------------------
+		//Setup
+
+		//Use double buffering for engine
+		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, DOUBLE_BUFFERING);
 
 		//Set the screen color
 		glClearColor(0.4f, 0.4f, 0.4f, 1.0f);
 
-		//Turn off VSYNC
+		//Set up VSYNC
 		EnableVSYNC(VSYNC);
 
 		//Set the face culling
 		if (FACE_CULLING)
 			glEnable(GL_CULL_FACE);
+		//Setup WireFrame mode
+		if (POLYGON_MODE)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 		//Enable Alpha Blending
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	}
+	
+	//Creates an window
+	void Video::Create_Window()
+	{
+		//Create SDL Window
+		SDL_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_OPENGL);
+		Error(SDL_window == nullptr, "SDL Window could not be created!", true);
 	}
 
 	//Enables/Disables vertical synchronization (VSYNC)
@@ -136,6 +137,14 @@ namespace AndromedaEngine
 		return NULL;
 	}
 
+	//Clears the screen buffer, so we render to clean window
+	void Video::ClearScreen()
+	{
+		//Clear buffers first
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	}
+
+	//Swap back buffer to front buffer
 	void Video::SwapBuffer()
 	{
 		//Swap buffer to render on screen this loop

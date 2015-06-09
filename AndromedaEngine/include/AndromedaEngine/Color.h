@@ -3,6 +3,8 @@
 
 namespace AndromedaEngine
 {
+	/*	Color consists of Red, Green, Blue, Alpha values
+		- min value is 0, max value is 255 */
 	struct Color{
 		GLubyte r;
 		GLubyte g;

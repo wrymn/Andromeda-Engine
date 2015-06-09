@@ -47,6 +47,8 @@ namespace AndromedaEngine
 		static void Create_Window();
 		//Swap back buffer to front buffer
 		static void SwapBuffer();
+		//Clears the screen buffer, so we render to clean window
+		static void ClearScreen();
 
 		friend class Renderer;
 	private:

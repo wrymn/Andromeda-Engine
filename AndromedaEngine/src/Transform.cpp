@@ -2,14 +2,17 @@
 
 namespace AndromedaEngine
 {
-	Transform::Transform(){}
-
-	void Transform::Initialize()
+	Transform::Transform()
 	{
 		this->position = Vector2(0, 0);
 		this->scale = Vector2(1, 1);
 		this->rotation = glm::quat(1, 0, 0, 0);
 		this->direction = Vector2(0, 0);
+	}
+
+	void Transform::Initialize()
+	{
+		
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////

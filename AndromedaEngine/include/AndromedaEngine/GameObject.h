@@ -49,8 +49,7 @@ namespace AndromedaEngine
 		GameObject* FindChildByName(std::string const name);
 		//Finds and returns vector of objects by name
 		//std::vector<GameObject*> FindAllChildrenByName(std::string name);
-		//Destroys an passed gameObject
-		void Destroy(GameObject* object);
+		
 
 	protected:
 		//Called once at the creation of GameObject
@@ -62,11 +61,16 @@ namespace AndromedaEngine
 
 		friend class CircleCollider2D;
 		friend class Scene;
+
+	protected:
+		//Creates a new object and adds it to active scene
+		GameObject* Instantiate(GameObject* object, Vector2 position);
+		//Destroys an passed gameObject
+		void Destroy(GameObject* object);
+
 	private:
-		//Called when object is added to the scene
-		void Create();
 		//Called when object is destroyed
-		void Destroy();
+		void DestroyThisObject();
 
 		typedef std::vector<Component*> component_vector;
 		typedef component_vector::iterator component_vector_itr;

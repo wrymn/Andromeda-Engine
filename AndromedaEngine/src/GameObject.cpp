@@ -10,35 +10,45 @@ namespace AndromedaEngine
 		//If there is scene created
 		if (Scene::currentScene != NULL)
 		{
+			//Initialize object properties
 			this->gameObject = this;
 			this->parent = NULL;
-			this->transform = NULL;
 			this->name = "GameObject";
 			this->tag = "";
-			this->scene = Scene::currentScene;
-
+			this->scene = Scene::GetCurrentScene();
+			//Create transform of this object
+			this->transform = new Transform();
+			
 			//Catches for error
 			HRESULT result = CoCreateGuid(&guid);
-
-			Create();
 		}
 		else
 			Error("Cannot create gameObject without scene", true);
 	}
 
-	void GameObject::Create()
-	{
-		this->transform = new Transform();
-		this->transform->gameObject = this->gameObject;
-		this->AddComponent(transform);
-	}
-
+	//Destroys passed game object
 	void GameObject::Destroy(GameObject* object)
 	{
 		object->scene->RemoveGameObject(object);
 	}
 
-	void GameObject::Destroy()
+	//Creates new game object and adds it to scene
+	GameObject* GameObject::Instantiate(GameObject* object, Vector2 position)
+	{
+		//Add transform component to this object, which is required
+		object->AddComponent(object->transform);
+
+		//Give the object an position
+		object->transform->position = position;
+
+		//Add game object to active scene
+		Scene::AddGameObject(object);
+		
+		return object;
+	}
+
+	//Called when object is destroyed
+	void GameObject::DestroyThisObject()
 	{
 		//Destroy all gameObject`s children
 		for (gameObject_vector_itr itr = children.begin(); itr != children.end(); itr++)
@@ -83,7 +93,6 @@ namespace AndromedaEngine
 	void GameObject::AddChild(GameObject* gameObject)
 	{
 		gameObject->parent = this;
-		gameObject->Create();
 		this->children.push_back(gameObject);
 	}
 
