@@ -59,7 +59,7 @@ namespace AndromedaEngine
 		//Called when there is another collision from CircleCollider2D
 		virtual void OnCollisionEnter(Collider& collider);
 
-		friend class CircleCollider2D;
+		friend class Collider;
 		friend class Scene;
 
 	protected:

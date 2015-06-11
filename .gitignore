@@ -217,3 +217,7 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 *.tlog
+AndromedaEngine/Debug/AndromedaEngine.tlog/cl.command.1.tlog
+*.tlog
+AndromedaEngine/Debug/AndromedaEngine.tlog/CL.read.1.tlog
+AndromedaEngine/Debug/AndromedaEngine.tlog/Lib-link.write.1.tlog

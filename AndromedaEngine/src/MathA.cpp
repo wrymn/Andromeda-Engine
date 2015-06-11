@@ -15,7 +15,7 @@ namespace AndromedaEngine
 	};
 
 	template<typename T>
-	static T Clamp(T min, T value, T max)
+	T MathA::Clamp(T min, T value, T max)
 	{
 		if (value < min)
 			return min;
@@ -25,8 +25,17 @@ namespace AndromedaEngine
 			return value;
 	}
 
-	static float Lerp(float start, float end, float t)
+	float MathA::Lerp(float start, float end, float t)
 	{
 		return ((1.0f - t) * start) + (t * end);
+	}
+
+	float MathA::Abs(const float n)
+	{
+		float num = n;
+		if (num < 0)
+			return num *= -1.0f;
+		else
+			return num;
 	}
 }

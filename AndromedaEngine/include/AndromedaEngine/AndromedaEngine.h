@@ -15,6 +15,7 @@
 #include "Scene.h"
 #include "Collider.h"
 #include "CircleCollider2D.h"
+#include "BoxCollider.h"
 #include "Manager.h"
 #include "System.h"
 #include "Video.h"

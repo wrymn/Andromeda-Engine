@@ -3,7 +3,7 @@
 #include "Video.h"
 #include "Time.h"
 
-#define CAMERA_CONSOLE_DEBUG 1
+#define CAMERA_CONSOLE_DEBUG 0
 #define CAMERA_CONSOLE_DEBUG_INTERVAL 5
 
 namespace AndromedaEngine

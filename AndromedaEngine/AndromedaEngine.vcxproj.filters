@@ -126,6 +126,9 @@
     <ClInclude Include="include\AndromedaEngine\Video.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\AndromedaEngine\BoxCollider.h">
+      <Filter>EntitySystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AndromedaEngine.cpp">
@@ -208,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="src\Video.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BoxCollider.cpp">
+      <Filter>EntitySystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

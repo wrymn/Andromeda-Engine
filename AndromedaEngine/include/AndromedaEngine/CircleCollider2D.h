@@ -9,24 +9,18 @@ namespace AndromedaEngine
 		/*	Sets the radius of CircleCollider2D
 			- default value is 1 */
 		float radius;
-		//Whether the CircleCollider2D component is active
-		bool isActive;
-		/*	Whether this collider is only trigger
-			- isTrigger[true] = will only check for collision but not collide
-			- isTrigger[false] = will check for collision and collide */
-		bool isTrigger;
-
+		
 	private:
 		//The base value of radius.
-		float transformScale;
+		float maxRadius;
 
 	private:
 		//Initializes the component
-		void Initialize();
-		//Override method of collision, called from the scene
-		void Collision(Collider* collider);
+		void Initialize() override;
+		//Box vs Circle collision detection
+		bool CircleVsCircle(Collider* collider) override;
 		//Circle vs Circle collision detection
-		void CircleVsCircle(Collider* collider);
+		bool BoxVsCircle(Collider* collider) override;
 
 		//Sets the base transform scale of CircleCollider2D
 		void GetTransformScale();

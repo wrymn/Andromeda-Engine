@@ -30,8 +30,7 @@ namespace AndromedaEngine
 
 		//Add game object to active scene
 		Scene::AddGameObject(object);
-		if (object->name == "Player")
-			std::cout << "Instantiate scale: " << object->transform->scale.x << std::endl;
+
 		return object;
 	}
 

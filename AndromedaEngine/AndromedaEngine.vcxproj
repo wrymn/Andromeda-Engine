@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AndromedaEngine\BoxCollider.h" />
     <ClInclude Include="include\AndromedaEngine\Common.h" />
     <ClInclude Include="include\AndromedaEngine\Camera.h" />
     <ClInclude Include="include\AndromedaEngine\CircleCollider2D.h" />
@@ -47,6 +48,7 @@
     <ClInclude Include="include\AndromedaEngine\Video.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\BoxCollider.cpp" />
     <ClCompile Include="src\AndromedaEngine.cpp" />
     <ClCompile Include="src\Camera.cpp" />
     <ClCompile Include="src\CircleCollider2D.cpp" />

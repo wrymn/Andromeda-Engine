@@ -16,7 +16,6 @@ namespace AndromedaEngine
 		//Whether the component is active or not
 		bool isEnabled;
 
-
 		Component();
 		virtual ~Component();
 
