@@ -38,7 +38,7 @@ namespace AndromedaEngine
 		GUID guid;
 		
 		//Add the component to this object
-		void AddComponent(Component* component);
+		void AddComponent(Component& component);
 		//Finds and return an component by type
 		template<typename T>
 		T* FindComponentByType();

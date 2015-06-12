@@ -36,7 +36,7 @@ namespace AndromedaEngine
 	GameObject* GameObject::Instantiate(GameObject* object, Vector2 position)
 	{
 		//Add transform component to this object, which is required
-		object->AddComponent(object->transform);
+		object->AddComponent(*object->transform);
 
 		//Give the object an position
 		object->transform->position = position;
@@ -68,11 +68,11 @@ namespace AndromedaEngine
 		components.clear();
 	}
 
-	void GameObject::AddComponent(Component* component)
+	void GameObject::AddComponent(Component& component)
 	{
-		component->gameObject = this->gameObject;
-		components.push_back(component);
-		this->scene->componentManager->AddComponent(component);
+		component.gameObject = this->gameObject;
+		components.push_back(&component);
+		this->scene->componentManager->AddComponent(&component);
 	}
 
 	template<typename T>

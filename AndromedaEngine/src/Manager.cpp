@@ -23,7 +23,7 @@ namespace AndromedaEngine
 	GameObject* Manager::Instantiate(GameObject* object, Vector2 position)
 	{
 		//Add transform component to this object, which is required
-		object->AddComponent(object->transform);
+		object->AddComponent(*object->transform);
 
 		//Give the object an position
 		object->transform->position = position;
